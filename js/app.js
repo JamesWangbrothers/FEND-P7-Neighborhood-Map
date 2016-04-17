@@ -1,18 +1,54 @@
 'use strict'
-var locations = [{name: "Sushi Bar"},
-                 {name: "Korea BBQ"}, 
-                 {name: "Dim Sum"}, 
-                 {name: "Bart Station"},
-                 {name: "Hospital"}
-                ];
+var locations = [
+{
+    name: "Sushi Bar",
+    title: "Sushi Bar",
+    position: ""
 
-var viewModel = {
-    locations: ko.observableArray(locations),
-    filter: ko.observable(''),
+},
+{
+    name: "Korea BBQ",
+    title: "Sushi Bar",
+    position: ""
 
-   }
+},
+{
+    name: "KTV",
+    title: "Sushi Bar",
+    position: ""
 
-ko.applyBindings(viewModel);
+},
+{
+    name: "Hiking",
+    title: "Sushi Bar",
+    position: ""
+
+},
+{
+    name: "Mall",
+    title: "Sushi Bar",
+    position: ""
+
+},   
+];
+
+
+
+var viewModel = function(){
+
+    var self = this;
+
+    self.places = ko.observableArray(locations);
+
+    self.filter = ko.observable('');
+
+    self.search = ko.computed(function(){
+    return ko.utils.arrayFilter(self.places(), function(point){
+      return point.name.toLowerCase().indexOf(self.filter().toLowerCase()) >= 0;
+    });
+  });
+};
+ko.applyBindings(new viewModel());
 
 //loads the google maps API
 function initMap() {

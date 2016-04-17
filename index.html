@@ -6,12 +6,14 @@
 </head>
 <body>
 <form>
-	<p>Search: <input type="search" autocomplete="off"></p>
+	<p>Search: <input id="input" class="control" type="search" data-bind="textInput: filter, valueUpdate: 'keyup'" autocomplete="off" /></p>
 </form>
 
-<ul data-bind="foreach:locations">
+<div id="searchList">
+	<ul data-bind="foreach: search()">
 		<li data-bind="text: name"></li>
-</ul>
+	</ul>
+</div>
 
 <div id="map"></div>
 

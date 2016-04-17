@@ -1,7 +1,8 @@
 # FEND-P7-Neighborhood-Map
 
-## how I built the <applet></applet>
+## how I built the app
 The structure is similiar to Cat Clicks App: (https://github.com/JamesWangbrothers/Cat-Click-App.git)
+
 1. integrate google map API
 2. build three major parts: search bar, key locations, map contenting markers for these key locations
 	* search bar
