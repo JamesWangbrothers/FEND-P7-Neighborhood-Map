@@ -2,37 +2,35 @@
 var locations = [
 {
     name: "Sushi Bar",
-    title: "Sushi Bar",
-    position: ""
+    // position: {lat: , lng: },
+    description: ""
 
 },
 {
     name: "Korea BBQ",
-    title: "Sushi Bar",
-    position: ""
+    //position: {lat: , lng: },
+    description: ""
 
 },
 {
     name: "KTV",
-    title: "Sushi Bar",
-    position: ""
+    //position: {lat: , lng: },
+    description: ""
 
 },
 {
     name: "Hiking",
-    title: "Sushi Bar",
-    position: ""
+    //position: {lat: , lng: },
+    description: ""
 
 },
 {
     name: "Mall",
-    title: "Sushi Bar",
-    position: ""
+    //position: {lat: , lng: },
+    description: ""
 
 },   
 ];
-
-
 
 var viewModel = function(){
 
@@ -52,14 +50,14 @@ ko.applyBindings(new viewModel());
 
 //loads the google maps API
 function initMap() {
-  var myLatLng = {lat: -25.363, lng: 131.044};
+  var myLatLng = {lat: 37.3382, lng: -121.8863};
 
   // Create a map object and specify the DOM element for display.
   var mapDiv = document.getElementById('map');
   var map = new google.maps.Map(mapDiv, {
     center: myLatLng,
     scrollwheel: false,
-    zoom: 4
+    zoom: 15
   });
 
   // Create a marker and set its position.
@@ -68,4 +66,6 @@ function initMap() {
     position: myLatLng,
     title: 'Hello World!'
   });
+
+
 }
