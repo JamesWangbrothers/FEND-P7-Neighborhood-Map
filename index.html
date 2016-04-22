@@ -1,31 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Neighbor Search App</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="An annotated map of the Neighborhood in San Jose, CA">
+	<meta name="author" content="James Wang">
+	<title>Neighbor Search App</title>
+	<link rel="stylesheet" href="Library/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<form>
-	<p>Search: <input id="input" class="control" type="search" data-bind="textInput: filter, valueUpdate: 'keyup'" autocomplete="off" /></p>
-</form>
-
-<div id="searchList">
-	<ul data-bind="foreach: search()">
-		<li data-bind="text: name"></li>
-	</ul>
+<div class="container-fluid">
+	<header>
+		<div class ="error" data-bind="visible: showMessage">
+			<h4>Foursquare data is unavailable. Please try refreshing the page.</h4>
+		</div>
+		<div  class ="error" data-bind="visible: showMapMessage">
+			<h2>Google Maps is not loading. Please try refreshing the page.</h2>
+		</div>
+		<input type="search" class=" input-group col-xs-12" placeholder="Search Location..." name=5 data-bind="textInput: userInput, event: {keyup: filterMarkers}" autocomplete="on">
+	</header>
+	
+	<div class="content">		
+		<aside class="col-xs-4 sidenav">
+			<h4 class="lead"><b>Key Locations:</b></h4>
+			<ul data-bind="foreach: visible" class="nav">
+				<li data-bind="text: name, click: $parent.showInfo"></li>
+			</ul>
+		</aside>
+		<div id="map" class="col-xs-8 mapDiv"></div>	
+	</div>
 </div>
-
-<div id="map"></div>
-
-<link rel="stylesheet" type="text/css" href="styles.css">
-<script asyn defer src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
-<script asyn src="js/knockout-3.4.0.js"></script>
-<script asyn src="js/app.js"></script>
-<script>
-        function googleError() {
-            alert('Sorry, Google Maps could not be loaded. Please refresh the page.');
-        }
-        </script>
+<footer>
+		<p>Welcome to <a href="mailto:jameswong300@gmail.com">visit</a> me at the South of San Francisco Bay Area</p>
+</footer>
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" onerror="googleError()" async defer></script>
+<script src="Library/knockout-3.4.0.js"></script>
+<script async src="Library/jquery-2.2.3.min.js"></script>
+<script async src="app.js"></script>
 </body>
 </html>

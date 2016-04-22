@@ -1,7 +1,97 @@
+.content {
+	display: flex;
+	height: auto;
+	border-bottom: 2px solid #ff6fcf;
+}
 
-#map {
-	width: 66.66%;
-	height: 80%;
-	background-color: #ccc;
-	position: absolute;
+/*Search Bar*/
+input[type=search] {
+	text-indent: 45px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-image: url('Images/searchicon.png');
+    background-repeat: no-repeat;
+    background-position: 6px 3px; 
+    padding: 8px;
+}
+
+::-webkit-input-placeholder {
+  color: #fc6;
+}
+
+/*List Side Nav*/
+li {
+	cursor: pointer;
+	color:#7F7F7F;
+	padding: 4px;
+	font-size: 12px;
+	border-bottom: 1px dotted #E6E6E6;
+	border-top: 1px dotted #E6E6E6;
+	-webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+li:hover {
+	/*font-weight: bold;*/
+	/*background: rgba(226,226,226,1);*/
+	font-size: 18px;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+	color: #6cf;
+}
+
+li:active { 
+	background-color: #ff6fcf;
+	color: #fc6;
+}
+
+/*Map*/
+.mapDiv {
+    max-width: 100%;
+    min-height: 300px;
+}
+
+/*Footer*/
+footer {
+	text-align: center;
+	color: #ccc;
+	padding-top: 10px;
+}
+
+/*On different screen sizes, set readable font-size*/
+@media screen and (max-width: 340px) {
+	li {
+		font-size: 10px;
+	}
+
+	li:hover {
+		font-size: 16px;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	li {
+		font-size: 14px;
+	}
+	li:hover {
+		font-size: 20px;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	li {
+		font-size: 16px;
+	}
+	li:hover {
+		font-size: 22px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#iWindow {
+		width: 100px;
+	}
 }
