@@ -1,5 +1,8 @@
 # FEND-P7-Neighborhood-Map
+
 It is a user friendly App for displaying the annotation of key locations nearby my living space.
+![image of the application](http://i.imgur.com/85XIX4m.jpg)
+
 ## How did I built the app
 The structure is similiar to Cat Clicks App: https://github.com/JamesWangbrothers/Cat-Click-App.git
 
